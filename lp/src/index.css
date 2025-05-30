@@ -1,0 +1,46 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css');
+@import 'tailwindcss';
+
+@theme {
+    --font-pretendard: 'Pretendard';
+}
+
+@layer utilities {
+    @keyframes spin-slow {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .animate-spin-slow {
+        animation: spin-slow 20s linear infinite;
+    }
+}
+
+@layer base {
+    * {
+        @apply box-border;
+    }
+
+    html,
+    body {
+        @apply h-full m-0 p-0;
+    }
+
+    body {
+        @apply min-w-md bg-gray-100 text-gray-800 font-pretendard font-normal;
+    }
+}
+
+@layer components {
+    .btn {
+        @apply cursor-pointer border rounded-full transition-all duration-300 ease-in-out;
+    }
+
+    .input-box {
+        @apply w-full px-2 py-1 border border-gray-500 rounded-full;
+    }
+}
